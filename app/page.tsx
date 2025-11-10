@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import Faq from "@/components/Faq";
 import {
 	Button,
 } from "@/components/ui/button";
@@ -99,8 +100,109 @@ export default function Page() {
 		show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 	};
 
+	const faqSchema = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: [
+			{
+				"@type": "Question",
+				name: "What is Booklinq, exactly?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"Booklinq is your link-in-bio booking engine. Share one link anywhere (Instagram, WhatsApp, Google Maps, QR) and capture bookings directly—without aggregator commissions.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Who is it for first?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"Hospitality owners: vacation rentals, homestays, boutique hotels, hostels. Ticketing for events arrives next.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Why not use aggregators?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"They’re great for discovery, but you pay 15–20% and lose guest data. Booklinq helps you convert your audience directly and keep both the margin and the relationship.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Do I own the guest data?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"Yes. Names, emails, phone numbers, stay details—yours to export and use for remarketing, loyalty, and service.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "How do payments work?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"You connect a payment gateway in your country and get paid out to your account. We don’t hold your funds. (Country options vary; we’ll guide you during onboarding.)",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "What’s pricing?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"Simple monthly plan. No per-booking commission from us. (The calculator shows how fast that beats aggregator fees.)",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Can I run this alongside OTAs?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"Yes. Keep OTAs for discovery if you wish—use Booklinq for repeat and direct traffic (bio links, WhatsApp replies, QR at property, Google Maps website link).",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Can I manage multiple properties or rooms?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"Yes. Create property profiles, room types, availability, and base rules; guests can book in a few taps.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Refunds and cancellations?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"You set policies. Booklinq enforces them at checkout and in the confirmation emails shown to guests.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "When does it launch?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text:
+						"Hospitality: November 2025. Ticketing: December 2025. Join the waitlist to get early access.",
+				},
+			},
+		],
+	};
+
 	return (
 		<div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-[#0b1020] via-[#1a2450] to-[#2b176b] text-white antialiased">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+			/>
 			{/* subtle decorative glow */}
 			<div className="pointer-events-none absolute inset-0 -z-10">
 				<div className="absolute left-1/2 top-[-10%] h-[60vh] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.18),transparent_60%)] blur-2xl" />
@@ -120,6 +222,7 @@ export default function Page() {
 						<a href="#why" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">Why</a>
 						<a href="#calculator" aria-label="See savings calculator" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">Calculator</a>
 						<a href="#roadmap" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">Roadmap</a>
+						<a href="#faq" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">FAQ</a>
 						<Button size="sm" className="ml-2 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:content-[''] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent hover:before:translate-x-full before:transition before:duration-700" onClick={() => setWaitlistOpen(true)} aria-expanded={waitlistOpen} data-cta="waitlist-nav">
 							Get Early Access
 						</Button>
@@ -348,6 +451,7 @@ export default function Page() {
 						</div>
 					</div>
 				</section>
+				<Faq />
 			</main>
 
 			{/* Footer */}
