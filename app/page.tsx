@@ -112,7 +112,7 @@ export default function Page() {
 				<div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
 					<a href="#hero" className="inline-flex items-center gap-2">
 						<div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 grid place-items-center">
-							<Sparkles className="h-4 w-4 text-white" />
+							<LogoGlyph className="h-4 w-4" />
 						</div>
 						<span className="font-semibold tracking-tight">Booklinq</span>
 					</a>
@@ -143,7 +143,7 @@ export default function Page() {
 							className="flex flex-col items-center text-center"
 						>
 							<div className="mb-6 h-16 w-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 grid place-items-center shadow-[0_0_50px_-12px_rgba(99,102,241,.6)]">
-								<Sparkles className="h-7 w-7 text-white" />
+								<LogoGlyph className="h-9 w-9" />
 							</div>
 							<motion.h1
 								className="text-4xl md:text-6xl font-semibold tracking-tight"
@@ -541,6 +541,15 @@ function SocialLink(props: { href: string; label: string; children: React.ReactN
 		>
 			{props.children}
 		</a>
+	);
+}
+
+function LogoGlyph({ className = "" }: { className?: string }) {
+	return (
+		<svg viewBox="0 0 128 128" className={className} aria-hidden="true">
+			<circle cx="64" cy="56" r="32" fill="none" stroke="white" strokeWidth="10" opacity="0.9" />
+			<path d="M82 74 L98 90" stroke="white" strokeWidth="10" strokeLinecap="round" />
+		</svg>
 	);
 }
 
