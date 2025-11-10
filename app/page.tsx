@@ -52,6 +52,7 @@ export default function Page() {
 	const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
 	const [businessType, setBusinessType] = useState<string>("");
 	const [country, setCountry] = useState<string>("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	// Calculator state and currency niceties
 	const [revenue, setRevenue] = useState<number>(250000);
@@ -111,7 +112,7 @@ export default function Page() {
 				<div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
 					<a href="#hero" className="inline-flex items-center gap-2">
 						<div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 grid place-items-center">
-							<Sparkles className="h-4 w-4" />
+							<Sparkles className="h-4 w-4 text-white" />
 						</div>
 						<span className="font-semibold tracking-tight">Booklinq</span>
 					</a>
@@ -142,7 +143,7 @@ export default function Page() {
 							className="flex flex-col items-center text-center"
 						>
 							<div className="mb-6 h-16 w-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 grid place-items-center shadow-[0_0_50px_-12px_rgba(99,102,241,.6)]">
-								<Sparkles className="h-7 w-7" />
+								<Sparkles className="h-7 w-7 text-white" />
 							</div>
 							<motion.h1
 								className="text-4xl md:text-6xl font-semibold tracking-tight"
@@ -438,30 +439,30 @@ export default function Page() {
 					<DialogFooter>
 						<Button
 							className="gap-2"
-							onClick={() => {
+							disabled={isSubmitting}
+							onClick={async () => {
 								if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
 									setSubmitState("error");
 									return;
 								}
-								setSubmitState("success");
+								setIsSubmitting(true);
 								try {
-									const record = {
-										email,
-										businessType,
-										country,
-										createdAt: new Date().toISOString(),
-									};
-									const prev = JSON.parse(localStorage.getItem("booklinq_waitlist") || "[]");
-									const next = Array.isArray(prev) ? prev : [];
-									next.push(record);
-									localStorage.setItem("booklinq_waitlist", JSON.stringify(next));
-									// eslint-disable-next-line no-console
-									console.log("Waitlist submission", record);
-								} catch {}
+									const res = await fetch("/api/waitlist", {
+										method: "POST",
+										headers: { "Content-Type": "application/json" },
+										body: JSON.stringify({ email, businessType, country, source: "landing" }),
+									});
+									if (!res.ok) throw new Error("bad");
+									setSubmitState("success");
+								} catch {
+									setSubmitState("error");
+								} finally {
+									setIsSubmitting(false);
+								}
 							}}
 							data-cta="waitlist"
 						>
-							Request access <ArrowRight className="h-4 w-4" />
+							{isSubmitting ? "Submitting..." : "Request access"} <ArrowRight className="h-4 w-4" />
 						</Button>
 					</DialogFooter>
 				</DialogContent>
@@ -520,7 +521,7 @@ function RoadmapCopy(props: {
 									<p className="mt-1 text-white/70">{props.body}</p>
 								</div>
 							</div>
-							<span className="rounded-full bg-white/10 px-2 py-1 text-xs border border-white/20">{props.chip}</span>
+							<span className="rounded-full bg-white/10 px-3 py-1 text-xs leading-none border border-white/20 text-white/90 whitespace-nowrap">{props.chip}</span>
 						</div>
 					</div>
 				</div>
