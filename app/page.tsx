@@ -210,16 +210,16 @@ export default function Page() {
 			</div>
 
 			{/* Top nav */}
-			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 bg-white/0 border-b border-white/10">
+			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-[#1D0B5B]/20 bg-[#1D0B5B]/10 border-b border-[#02A6A5]/20">
 				<div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
 					<a href="#hero" className="inline-flex items-center gap-2">
 						<Logo size="sm" showWordmark={true} />
 					</a>
 					<nav className="hidden sm:flex items-center gap-2">
-						<a href="#why" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">Why</a>
-						<a href="#calculator" aria-label="See savings calculator" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">Calculator</a>
-						<a href="#roadmap" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">Roadmap</a>
-						<a href="#faq" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">FAQ</a>
+						<a href="#why" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">Why</a>
+						<a href="#calculator" aria-label="See savings calculator" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">Calculator</a>
+						<a href="#roadmap" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">Roadmap</a>
+						<a href="#faq" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">FAQ</a>
 						<Button size="sm" className="ml-2 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:content-[''] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent hover:before:translate-x-full before:transition before:duration-700" onClick={() => setWaitlistOpen(true)} aria-expanded={waitlistOpen} data-cta="waitlist-nav">
 							Get Early Access
 						</Button>
@@ -232,7 +232,7 @@ export default function Page() {
 				<section id="hero" className="relative">
 					<div className="mx-auto max-w-6xl px-6 pt-16 sm:pt-24 pb-16 sm:pb-28">
 						<div className="absolute right-6 top-6 sm:top-8 sm:right-8 opacity-80">
-							<span className="shimmer rounded-full bg-white/5 px-3 py-1 text-xs md:text-sm backdrop-blur border border-white/10">
+							<span className="shimmer rounded-full bg-[#1D0B5B]/30 px-3 py-1 text-xs md:text-sm backdrop-blur border border-[#02A6A5]/30">
 								Hospitality alpha ships November 2025 • Ticketing in December 2025
 							</span>
 						</div>
@@ -265,7 +265,7 @@ export default function Page() {
 								<Button size="lg" onClick={() => setWaitlistOpen(true)} className="gap-2 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:content-[''] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent hover:before:translate-x-full before:transition before:duration-700" aria-expanded={waitlistOpen} data-cta="waitlist-hero">
 									Get early access <ArrowRight className="h-4 w-4" />
 								</Button>
-								<Button size="lg" variant="secondary" asChild className="bg-white/10 text-white hover:bg-white/20 border border-white/10">
+								<Button size="lg" variant="secondary" asChild className="bg-[#1D0B5B]/20 text-white hover:bg-[#1D0B5B]/30 border border-[#02A6A5]/30">
 									<a href="#calculator" aria-label="See savings calculator" className="gap-2 inline-flex items-center" data-cta="see-calculator">
 										See savings calculator <Calculator className="h-4 w-4" />
 									</a>
@@ -306,7 +306,7 @@ export default function Page() {
 							viewport={{ once: true, margin: "-80px" }}
 							className="grid grid-cols-1 lg:grid-cols-2 gap-6"
 						>
-							<Card className="bg-white/5 border-white/10">
+							<Card className="bg-[#1D0B5B]/20 border-[#02A6A5]/20">
 								<CardHeader>
 									<CardTitle className="flex items-center gap-2">
 										<Calculator className="h-5 w-5 text-[#02A6A5]" />
@@ -321,7 +321,7 @@ export default function Page() {
 											<span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/60">{currencySymbol}</span>
 											<Input
 												inputMode="numeric"
-												className="pl-7 bg-white/5 border-white/10 text-white placeholder:text-white/40"
+												className="pl-7 bg-[#1D0B5B]/20 border-[#02A6A5]/30 text-white placeholder:text-white/40"
 												placeholder="e.g., 250,000"
 												value={revenueText}
 												onChange={(e) => {
@@ -334,11 +334,11 @@ export default function Page() {
 										</div>
 										<div className="mt-2 flex items-center gap-2 text-xs text-white/70">
 											<span>Currency:</span>
-											<button className="underline hover:text-white" onClick={() => setCurrency("INR")} type="button">INR</button>
+											<button className="underline hover:text-[#02A6A5]" onClick={() => setCurrency("INR")} type="button">INR</button>
 											<span>·</span>
-											<button className="underline hover:text-white" onClick={() => setCurrency("AED")} type="button">AED</button>
+											<button className="underline hover:text-[#02A6A5]" onClick={() => setCurrency("AED")} type="button">AED</button>
 											<span>·</span>
-											<button className="underline hover:text-white" onClick={() => setCurrency("USD")} type="button">USD</button>
+											<button className="underline hover:text-[#02A6A5]" onClick={() => setCurrency("USD")} type="button">USD</button>
 										</div>
 									</div>
 
@@ -362,17 +362,17 @@ export default function Page() {
 										</div>
 									</div>
 
-									<div className="rounded-xl border border-white/10 bg-white/5 p-4">
+									<div className="rounded-xl border border-[#02A6A5]/30 bg-[#1D0B5B]/30 p-4">
 										<p className="mt-1 text-lg">
-											You’re losing <strong>{formattedLoss}/mo</strong> to commissions.
+											You’re losing <strong className="text-[#02A6A5]">{formattedLoss}/mo</strong> to commissions.
 										</p>
-										<p className="text-white/70">With Booklinq: <strong>{currencySymbol}0</strong> lost. Full control.</p>
+										<p className="text-white/70">With Booklinq: <strong className="text-[#02A6A5]">{currencySymbol}0</strong> lost. Full control.</p>
 									</div>
 
 									<Button size="lg" className="w-full gap-2 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:content-[''] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent hover:before:translate-x-full before:transition before:duration-700" onClick={() => setWaitlistOpen(true)} data-cta="calculator-waitlist">
 										Get my booking link early <ArrowRight className="h-4 w-4" />
 									</Button>
-									<div className="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+									<div className="mt-4 rounded-xl border border-[#02A6A5]/20 bg-[#1D0B5B]/20 p-4">
 										<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
 											<div className="text-sm text-white/80">
 												<div className="font-medium">Plan vs commission</div>
@@ -391,7 +391,7 @@ export default function Page() {
 								</CardContent>
 							</Card>
 
-							<Card className="bg-white/5 border-white/10">
+							<Card className="bg-[#1D0B5B]/20 border-[#02A6A5]/20">
 								<CardHeader>
 									<CardTitle className="flex items-center gap-2">
 										<Logo size="sm" showWordmark={false} />
@@ -452,7 +452,7 @@ export default function Page() {
 			</main>
 
 			{/* Footer */}
-			<footer className="border-t border-white/10">
+			<footer className="border-t border-[#02A6A5]/20">
 				<div className="mx-auto max-w-6xl px-6 py-10">
 					<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
 						<div className="flex items-center gap-3">
@@ -465,10 +465,10 @@ export default function Page() {
 							Built by Innobles Technologies LLC — Dubai & India.
 						</div>
 						<div className="flex items-center gap-4 text-sm">
-							<a href="mailto:hello@mybooklinq.com" className="hover:text-white transition">hello@mybooklinq.com</a>
-							<a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition">LinkedIn</a>
-							<a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-white transition">Twitter</a>
-							<a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-white transition">Instagram</a>
+							<a href="mailto:hello@mybooklinq.com" className="hover:text-[#02A6A5] transition">hello@mybooklinq.com</a>
+							<a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition">LinkedIn</a>
+							<a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition">Twitter</a>
+							<a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition">Instagram</a>
 						</div>
 					</div>
 				</div>
@@ -479,7 +479,7 @@ export default function Page() {
 				<DialogTrigger asChild>
 					<button className="hidden" aria-hidden />
 				</DialogTrigger>
-				<DialogContent className="bg-[#0b1020] border-white/10 text-white">
+				<DialogContent className="bg-[#1D0B5B] border-[#02A6A5]/30 text-white">
 					<DialogHeader>
 						<DialogTitle>Join the early access list</DialogTitle>
 						<DialogDescription className="text-white/70">
@@ -493,7 +493,7 @@ export default function Page() {
 								type="email"
 								required
 								placeholder="yourname@hotel.com"
-								className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
+								className="bg-[#1D0B5B]/20 border-[#02A6A5]/30 text-white placeholder:text-white/40"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								data-cta="waitlist-email"
@@ -502,7 +502,7 @@ export default function Page() {
 						<div>
 							<label className="mb-2 block text-sm text-white/80">Business type</label>
 							<select
-								className="mt-1 w-full rounded-md bg-white/5 p-2 outline-none border border-white/10"
+								className="mt-1 w-full rounded-md bg-[#1D0B5B]/20 p-2 outline-none border border-[#02A6A5]/30 text-white"
 								value={businessType}
 								onChange={(e) => setBusinessType(e.target.value)}
 							>
@@ -519,7 +519,7 @@ export default function Page() {
 							<label className="mb-2 block text-sm text-white/80">Country (optional)</label>
 							<Input
 								placeholder="UAE / India / …"
-								className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
+								className="bg-[#1D0B5B]/20 border-[#02A6A5]/30 text-white placeholder:text-white/40"
 								value={country}
 								onChange={(e) => setCountry(e.target.value)}
 							/>
@@ -528,10 +528,10 @@ export default function Page() {
 							By joining, you agree to receive limited product updates. No spam, ever.
 						</p>
 						{submitState === "success" && (
-							<p className="mt-2 text-sm text-emerald-300">You’re on the list. We’ll reach out before launch.</p>
+							<p className="mt-2 text-sm text-[#02A6A5]">You’re on the list. We’ll reach out before launch.</p>
 						)}
 						{submitState === "error" && (
-							<p className="mt-2 text-sm text-rose-300">Couldn’t submit just now. Try again in a moment.</p>
+							<p className="mt-2 text-sm text-red-400">Couldn’t submit just now. Try again in a moment.</p>
 						)}
 					</div>
 					<DialogFooter>
@@ -577,9 +577,9 @@ function FeatureCopy(props: { icon: React.ReactNode; title: string; body: string
 			viewport={{ once: true, margin: "-80px" }}
 			transition={{ duration: 0.4 }}
 		>
-			<Card className="h-full bg-white/5 border-white/10">
+			<Card className="h-full bg-[#1D0B5B]/20 border-[#02A6A5]/20">
 				<CardHeader className="flex items-center gap-3 text-left">
-					<div className="h-9 w-9 rounded-lg bg-[#1D0B5B]/60 grid place-items-center text-[#02A6A5]">
+					<div className="h-9 w-9 rounded-lg bg-[#1D0B5B] grid place-items-center text-[#02A6A5]">
 						{props.icon}
 					</div>
 					<h3 className="text-lg font-medium">{props.title}</h3>
@@ -608,7 +608,7 @@ function RoadmapCopy(props: {
 			transition={{ duration: 0.4 }}
 		>
 			<div className={classNames("relative overflow-hidden rounded-2xl p-[1px]", "bg-gradient-to-br", props.gradient)}>
-				<div className="rounded-2xl h-full w-full bg-[#0d1328]">
+				<div className="rounded-2xl h-full w-full bg-[#1D0B5B]/10">
 					<div className="p-6">
 						<div className="flex items-start justify-between">
 							<div className="flex items-start gap-3">

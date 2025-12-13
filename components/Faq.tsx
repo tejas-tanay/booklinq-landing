@@ -54,12 +54,12 @@ export default function Faq() {
 				<h2 className="text-2xl md:text-3xl font-semibold">FAQ</h2>
 				<p className="mt-2 text-white/70">Quick answers to common questions.</p>
 			</div>
-			<div className="divide-y divide-white/10 rounded-xl border border-white/10 bg-white/5 backdrop-blur">
+			<div className="divide-y divide-[#02A6A5]/20 rounded-xl border border-[#02A6A5]/30 bg-[#1D0B5B]/20 backdrop-blur">
 				{ITEMS.map((item, idx) => (
-					<details key={idx} className="group px-4 md:px-6 open:bg-white/[0.03]">
+					<details key={idx} className="group px-4 md:px-6 open:bg-[#1D0B5B]/30">
 						<summary className="cursor-pointer list-none py-4 flex items-center justify-between">
 							<span className="text-sm md:text-base font-medium">{item.q}</span>
-							<span className="ml-3 rounded-md bg-white/5 text-white/70 w-6 h-6 grid place-items-center border border-white/10">
+							<span className="ml-3 rounded-md bg-[#1D0B5B] text-[#02A6A5] w-6 h-6 grid place-items-center border border-[#02A6A5]/30">
 								<span className="transition group-open:hidden">+</span>
 								<span className="transition hidden group-open:inline">–</span>
 							</span>
@@ -74,11 +74,11 @@ export default function Faq() {
 			{/* tiny CTA */}
 			<div className="mt-6 text-center text-sm text-white/80">
 				Still have a question?{" "}
-				<a href="mailto:hello@mybooklinq.com" className="underline hover:text-white">
+				<a href="mailto:hello@mybooklinq.com" className="underline hover:text-[#02A6A5]">
 					Email us
 				</a>{" "}
 				or{" "}
-				<a href="#hero" className="underline hover:text-white">
+				<a href="#hero" className="underline hover:text-[#02A6A5]">
 					join the waitlist
 				</a>
 				.
