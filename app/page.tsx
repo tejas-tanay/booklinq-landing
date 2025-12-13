@@ -28,6 +28,7 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
+import Logo from "@/components/Logo";
 import {
 	ArrowRight,
 	Calculator,
@@ -40,7 +41,6 @@ import {
 	Twitter,
 	Instagram,
 	Mail,
-	Sparkles,
 } from "lucide-react";
 
 function classNames(...classes: Array<string | false | null | undefined>) {
@@ -198,25 +198,22 @@ export default function Page() {
 	};
 
 	return (
-		<div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-[#0b1020] via-[#1a2450] to-[#2b176b] text-white antialiased">
+		<div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-[#0b1020] via-[#1D0B5B] to-[#0b1020] text-white antialiased">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
 			/>
 			{/* subtle decorative glow */}
 			<div className="pointer-events-none absolute inset-0 -z-10">
-				<div className="absolute left-1/2 top-[-10%] h-[60vh] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.18),transparent_60%)] blur-2xl" />
-				<div className="absolute right-[-10%] bottom-[-10%] h-[50vh] w-[50vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.12),transparent_60%)] blur-2xl" />
+				<div className="absolute left-1/2 top-[-10%] h-[60vh] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(29,11,91,0.25),transparent_60%)] blur-2xl" />
+				<div className="absolute right-[-10%] bottom-[-10%] h-[50vh] w-[50vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(2,166,165,0.15),transparent_60%)] blur-2xl" />
 			</div>
 
 			{/* Top nav */}
 			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 bg-white/0 border-b border-white/10">
 				<div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
 					<a href="#hero" className="inline-flex items-center gap-2">
-						<div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 grid place-items-center">
-							<LogoGlyph className="h-4 w-4" />
-						</div>
-						<span className="font-semibold tracking-tight">Booklinq</span>
+						<Logo size="sm" showWordmark={true} />
 					</a>
 					<nav className="hidden sm:flex items-center gap-2">
 						<a href="#why" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-white transition">Why</a>
@@ -245,8 +242,8 @@ export default function Page() {
 							animate="show"
 							className="flex flex-col items-center text-center"
 						>
-							<div className="mb-6 h-16 w-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 grid place-items-center shadow-[0_0_50px_-12px_rgba(99,102,241,.6)]">
-								<LogoGlyph className="h-9 w-9" />
+							<div className="mb-6">
+								<Logo size="lg" showWordmark={false} />
 							</div>
 							<motion.h1
 								className="text-4xl md:text-6xl font-semibold tracking-tight"
@@ -312,7 +309,7 @@ export default function Page() {
 							<Card className="bg-white/5 border-white/10">
 								<CardHeader>
 									<CardTitle className="flex items-center gap-2">
-										<Calculator className="h-5 w-5 text-indigo-400" />
+										<Calculator className="h-5 w-5 text-[#02A6A5]" />
 										See how much commission you’re burning.
 									</CardTitle>
 									<CardDescription />
@@ -397,7 +394,7 @@ export default function Page() {
 							<Card className="bg-white/5 border-white/10">
 								<CardHeader>
 									<CardTitle className="flex items-center gap-2">
-										<Sparkles className="h-5 w-5 text-indigo-400" />
+										<Logo size="sm" showWordmark={false} />
 										How Booklinq helps
 									</CardTitle>
 									<CardDescription>Convert more, pay less, and build your brand.</CardDescription>
@@ -438,7 +435,7 @@ export default function Page() {
 								title="Hospitality launch"
 								body="Vacation rentals, homestays, boutique hotels — your link-in-bio booking engine with instant confirmations."
 								chip="Coming soon"
-								gradient="from-indigo-500/30 to-violet-500/30"
+								gradient="from-[#1D0B5B]/30 to-[#02A6A5]/30"
 							/>
 							<RoadmapCopy
 								icon={<Ticket className="h-5 w-5" />}
@@ -446,7 +443,7 @@ export default function Page() {
 								title="Ticketing launch"
 								body="Create, share, and scan tickets. Mobile-first. Direct. No middlemen."
 								chip="Coming soon"
-								gradient="from-sky-500/30 to-cyan-500/30"
+								gradient="from-[#02A6A5]/30 to-[#1D0B5B]/30"
 							/>
 						</div>
 					</div>
@@ -459,11 +456,8 @@ export default function Page() {
 				<div className="mx-auto max-w-6xl px-6 py-10">
 					<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
 						<div className="flex items-center gap-3">
-							<div className="h-9 w-9 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 grid place-items-center">
-								<Sparkles className="h-5 w-5" />
-							</div>
+							<Logo size="sm" showWordmark={true} />
 							<div>
-								<p className="font-semibold">Booklinq</p>
 								<p className="text-xs text-white/70">© 2025 Booklinq. All rights reserved.</p>
 							</div>
 						</div>
@@ -585,7 +579,7 @@ function FeatureCopy(props: { icon: React.ReactNode; title: string; body: string
 		>
 			<Card className="h-full bg-white/5 border-white/10">
 				<CardHeader className="flex items-center gap-3 text-left">
-					<div className="h-9 w-9 rounded-lg bg-gradient-to-br from-indigo-500/60 to-violet-600/60 grid place-items-center text-white">
+					<div className="h-9 w-9 rounded-lg bg-[#1D0B5B]/60 grid place-items-center text-[#02A6A5]">
 						{props.icon}
 					</div>
 					<h3 className="text-lg font-medium">{props.title}</h3>
@@ -648,13 +642,5 @@ function SocialLink(props: { href: string; label: string; children: React.ReactN
 	);
 }
 
-function LogoGlyph({ className = "" }: { className?: string }) {
-	return (
-		<svg viewBox="0 0 128 128" className={className} aria-hidden="true">
-			<circle cx="64" cy="56" r="32" fill="none" stroke="white" strokeWidth="10" opacity="0.9" />
-			<path d="M82 74 L98 90" stroke="white" strokeWidth="10" strokeLinecap="round" />
-		</svg>
-	);
-}
 
 

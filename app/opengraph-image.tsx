@@ -15,20 +15,29 @@ export default function OG() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 64,
-          background: "linear-gradient(135deg, #0a2540 0%, #6b5bff 100%)",
+          background: "linear-gradient(135deg, #0b1020 0%, #1D0B5B 100%)",
           color: "white",
           fontFamily:
             "Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          {/* Inline logo mark */}
-          <svg width="64" height="64" viewBox="0 0 128 128" fill="none">
-            <circle cx="64" cy="56" r="32" stroke="white" strokeWidth="10" opacity="0.9" />
-            <path d="M82 74 L98 90" stroke="white" strokeWidth="10" strokeLinecap="round" />
+          {/* Inline logo mark: Purple L with teal arrow */}
+          <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
+            {/* Purple L shape */}
+            <rect x="0" y="0" width="12" height="32" fill="#1D0B5B" />
+            <rect x="0" y="20" width="32" height="12" fill="#1D0B5B" />
+            {/* Teal arrow */}
+            <path
+              d="M14 18 L22 10 M22 10 L22 14 M22 10 L18 10"
+              stroke="#02A6A5"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
-          <span style={{ fontSize: 40, fontWeight: 700, letterSpacing: -0.5 }}>
-            Booklinq
+          <span style={{ fontSize: 40, fontWeight: 700, letterSpacing: -0.5, color: "#1D0B5B" }}>
+            booklinq
           </span>
         </div>
         <div style={{ height: 40 }} />
