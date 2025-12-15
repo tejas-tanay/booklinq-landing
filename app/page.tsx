@@ -28,33 +28,57 @@ export default function Page() {
 			<main id="top">
 				{/* SECTION 1 — HERO */}
 				<section className="mx-auto max-w-5xl px-6 pt-20 sm:pt-28 pb-16">
-					<motion.div variants={fadeUp} initial="hidden" animate="show">
-						<h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05] max-w-xl">
-							Your booking link.
-							<br />
-							Your guests.
-							<br />
-							Your terms.
-						</h1>
-						<p className="mt-6 max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed">
-							A direct booking page for independent hotels and short-stay hosts —
-							without commissions or lock‑in.
-						</p>
-						<div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-							<Button asChild size="lg" data-cta="create-booking-link">
-								<a href="mailto:hello@mybooklinq.com?subject=Booklinq%20%E2%80%94%20Create%20my%20booking%20link">
-									Create your booking link <ArrowRight className="h-4 w-4" />
+					<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+						<motion.div variants={fadeUp} initial="hidden" animate="show" className="lg:col-span-6">
+							<h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05] max-w-xl">
+								Your booking link.
+								<br />
+								Your guests.
+								<br />
+								Your terms.
+							</h1>
+							<p className="mt-6 max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed">
+								A direct booking page for independent hotels and short-stay hosts —
+								without commissions or lock‑in.
+							</p>
+							<div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+								<Button asChild size="lg" data-cta="create-booking-link">
+									<a href="mailto:hello@mybooklinq.com?subject=Booklinq%20%E2%80%94%20Create%20my%20booking%20link">
+										Create your booking link <ArrowRight className="h-4 w-4" />
+									</a>
+								</Button>
+								<a
+									href="#how"
+									className="text-sm font-medium text-[#1D0B5B]/80 hover:text-[#1D0B5B] transition underline underline-offset-4"
+									data-cta="see-how-it-works"
+								>
+									See how it works
 								</a>
-							</Button>
-							<a
-								href="#how"
-								className="text-sm font-medium text-[#1D0B5B]/80 hover:text-[#1D0B5B] transition underline underline-offset-4"
-								data-cta="see-how-it-works"
-							>
-								See how it works
-							</a>
-						</div>
-					</motion.div>
+							</div>
+						</motion.div>
+
+						{/* Hero visual (real product screenshot) */}
+						<motion.div
+							variants={fadeUp}
+							initial="hidden"
+							animate="show"
+							transition={{ delay: 0.05 }}
+							className="lg:col-span-6 lg:justify-self-end"
+						>
+							<figure className="-rotate-2">
+								<div className="rounded-[26px] border border-[#1D0B5B]/10 bg-white p-3 shadow-sm">
+									<div className="rounded-[20px] overflow-hidden bg-white">
+										<img
+											src="/screenshots/booking-page-mobile.png"
+											alt="Booklinq booking page on mobile"
+											className="block w-full h-auto"
+											loading="eager"
+										/>
+									</div>
+								</div>
+							</figure>
+						</motion.div>
+					</div>
 				</section>
 
 				{/* SECTION 2 — REALITY CHECK */}
@@ -115,6 +139,29 @@ export default function Page() {
 						</div>
 					</motion.div>
 				</section>
+
+				{/* Mid-page visual (real product screenshot) */}
+				<div className="mx-auto max-w-5xl px-6 pb-16">
+					<motion.figure
+						variants={fadeUp}
+						initial="hidden"
+						whileInView="show"
+						viewport={{ once: true, margin: "-80px" }}
+						className="mx-auto max-w-2xl"
+					>
+						<div className="rounded-2xl border border-[#1D0B5B]/10 bg-white p-4 shadow-sm">
+							<img
+								src="/screenshots/share-booklinq-modal.png"
+								alt="Booklinq share modal"
+								className="block w-full h-auto rounded-xl"
+								loading="lazy"
+							/>
+						</div>
+						<figcaption className="mt-3 text-sm text-slate-600">
+							Share your booking link anywhere your guests already are.
+						</figcaption>
+					</motion.figure>
+				</div>
 
 				{/* SECTION 5 — CONTRAST */}
 				<section id="contrast" className="mx-auto max-w-5xl px-6 py-16">
