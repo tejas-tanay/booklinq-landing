@@ -15,7 +15,7 @@ export default function OG() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 64,
-          background: "linear-gradient(135deg, #0b1020 0%, #1D0B5B 100%)",
+          background: "linear-gradient(135deg, #1D0B5B 0%, #1a094f 100%)",
           color: "white",
           fontFamily:
             "Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
@@ -36,7 +36,7 @@ export default function OG() {
               strokeLinejoin="round"
             />
           </svg>
-          <span style={{ fontSize: 40, fontWeight: 700, letterSpacing: -0.5, color: "#1D0B5B" }}>
+          <span style={{ fontSize: 40, fontWeight: 700, letterSpacing: -0.5, color: "#02A6A5" }}>
             booklinq
           </span>
         </div>

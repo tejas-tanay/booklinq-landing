@@ -198,15 +198,15 @@ export default function Page() {
 	};
 
 	return (
-		<div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-[#0b1020] via-[#1D0B5B] to-[#0b1020] text-white antialiased">
+		<div className="relative min-h-screen w-full overflow-x-hidden bg-[#1D0B5B] text-white antialiased">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
 			/>
 			{/* subtle decorative glow */}
 			<div className="pointer-events-none absolute inset-0 -z-10">
-				<div className="absolute left-1/2 top-[-10%] h-[60vh] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(29,11,91,0.25),transparent_60%)] blur-2xl" />
-				<div className="absolute right-[-10%] bottom-[-10%] h-[50vh] w-[50vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(2,166,165,0.15),transparent_60%)] blur-2xl" />
+				<div className="absolute left-1/2 top-[-10%] h-[60vh] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(2,166,165,0.22),transparent_60%)] blur-2xl" />
+				<div className="absolute right-[-10%] bottom-[-10%] h-[50vh] w-[50vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(2,166,165,0.14),transparent_60%)] blur-2xl" />
 			</div>
 
 			{/* Top nav */}
