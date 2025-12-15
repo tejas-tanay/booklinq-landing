@@ -5,14 +5,18 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Booklinq — Your booking link, anywhere",
+  title: "Booklinq — Your booking link. Your guests. Your terms.",
   description:
-    "Stop losing 15–20% to aggregators. Booklinq lets you own bookings, guest data, and brand — hospitality (Nov 2025) and ticketing (Dec 2025).",
+    "A direct booking page for independent hotels and short-stay hosts — without commissions or lock‑in.",
   metadataBase: new URL("https://mybooklinq.com"),
+  icons: {
+    icon: [{ url: "/brand/booklinq-mark.png", type: "image/png" }],
+    apple: [{ url: "/brand/booklinq-mark.png", type: "image/png" }],
+  },
   openGraph: {
     title: "Booklinq",
     description:
-      "Your booking link, anywhere. Keep your money, own your guests, convert directly.",
+      "Your booking link. Your guests. Your terms.",
     url: "https://mybooklinq.com",
     siteName: "Booklinq",
     images: [
@@ -27,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Booklinq — Your booking link, anywhere",
+    title: "Booklinq — Your booking link. Your guests. Your terms.",
     description:
-      "Keep your money. Own your guests. Convert directly. Hospitality (Nov 2025) and Ticketing (Dec 2025).",
+      "A direct booking page for independent hotels and short-stay hosts — without commissions or lock‑in.",
     images: ["/opengraph-image"],
   },
 };
