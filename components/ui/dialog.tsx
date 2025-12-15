@@ -41,7 +41,7 @@ export function DialogContent({
 			<div
 				role="dialog"
 				aria-modal="true"
-				className={["relative z-10 w-full max-w-lg rounded-2xl border border-white/10 bg-[#0b1020] p-6 shadow-xl", className].join(" ")}
+				className={["relative z-10 w-full max-w-lg rounded-2xl border border-[#02A6A5]/30 bg-[#1D0B5B] p-6 shadow-xl", className].join(" ")}
 			>
 				{children}
 			</div>
