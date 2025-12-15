@@ -16,7 +16,7 @@ export default function OG() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 64,
-          background: "linear-gradient(135deg, #fbfcff 0%, #f3f6ff 60%, #ecfbfb 100%)",
+          background: "#fbfcff",
           color: "#1D0B5B",
           fontFamily:
             "Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
@@ -46,8 +46,8 @@ export default function OG() {
           {headline}
         </div>
         <div style={{ height: 16 }} />
-        <div style={{ fontSize: 28, opacity: 0.8, maxWidth: 900 }}>
-          A direct booking page for independent hotels and short-stay hosts — without commissions or lock-in.
+        <div style={{ fontSize: 28, opacity: 0.75, maxWidth: 900 }}>
+          A direct booking page for independent hotels and short-stay hosts — without commissions or lock‑in.
         </div>
         <div style={{ height: 40 }} />
         <div style={{ display: "flex", gap: 16, opacity: 0.9 }}>
