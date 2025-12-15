@@ -15,8 +15,8 @@ export default function OG() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 64,
-          background: "linear-gradient(135deg, #1D0B5B 0%, #1a094f 100%)",
-          color: "white",
+          background: "linear-gradient(135deg, #fbfcff 0%, #f3f6ff 60%, #ecfbfb 100%)",
+          color: "#1D0B5B",
           fontFamily:
             "Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
         }}
@@ -36,17 +36,21 @@ export default function OG() {
               strokeLinejoin="round"
             />
           </svg>
-          <span style={{ fontSize: 40, fontWeight: 700, letterSpacing: -0.5, color: "#02A6A5" }}>
+          <span style={{ fontSize: 40, fontWeight: 700, letterSpacing: -0.5, color: "#1D0B5B" }}>
             booklinq
           </span>
         </div>
         <div style={{ height: 40 }} />
         <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.05 }}>
-          Your booking link, anywhere.
+          Your booking link.
+          <br />
+          Your guests.
+          <br />
+          Your terms.
         </div>
         <div style={{ height: 16 }} />
-        <div style={{ fontSize: 28, opacity: 0.9, maxWidth: 900 }}>
-          Keep your money. Own your guests. Convert directly.
+        <div style={{ fontSize: 28, opacity: 0.8, maxWidth: 900 }}>
+          A direct booking page for independent hotels and short-stay hosts — without commissions or lock-in.
         </div>
         <div style={{ height: 40 }} />
         <div style={{ display: "flex", gap: 16, opacity: 0.9 }}>
@@ -55,8 +59,9 @@ export default function OG() {
               fontSize: 22,
               padding: "10px 16px",
               borderRadius: 999,
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.25)",
+              background: "rgba(2,166,165,0.12)",
+              border: "1px solid rgba(2,166,165,0.25)",
+              color: "#1D0B5B",
             }}
           >
             Hospitality alpha • Nov 2025
@@ -66,8 +71,9 @@ export default function OG() {
               fontSize: 22,
               padding: "10px 16px",
               borderRadius: 999,
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.25)",
+              background: "rgba(2,166,165,0.12)",
+              border: "1px solid rgba(2,166,165,0.25)",
+              color: "#1D0B5B",
             }}
           >
             Ticketing • Dec 2025
