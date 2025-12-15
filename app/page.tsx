@@ -123,22 +123,22 @@ export default function Page() {
 				<section id="how" className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">How Booklinq fits in</h2>
-						<div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
+						<div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-10">
 							<div className="max-w-sm">
-								<h3 className="text-base font-medium">Create</h3>
-								<p className="mt-2 text-slate-600 leading-relaxed">
+								<h3 className="text-[15px] font-medium text-[#1D0B5B]">Create</h3>
+								<p className="mt-2 text-[15px] text-slate-600 leading-relaxed">
 									Set up your property once — pricing, availability and policies.
 								</p>
 							</div>
 							<div className="max-w-sm">
-								<h3 className="text-base font-medium">Share</h3>
-								<p className="mt-2 text-slate-600 leading-relaxed">
+								<h3 className="text-[15px] font-medium text-[#1D0B5B]">Share</h3>
+								<p className="mt-2 text-[15px] text-slate-600 leading-relaxed">
 									Use your booking link anywhere guests already find you.
 								</p>
 							</div>
 							<div className="max-w-sm">
-								<h3 className="text-base font-medium">Accept</h3>
-								<p className="mt-2 text-slate-600 leading-relaxed">
+								<h3 className="text-[15px] font-medium text-[#1D0B5B]">Accept</h3>
+								<p className="mt-2 text-[15px] text-slate-600 leading-relaxed">
 									Receive bookings and payments directly, on your terms.
 								</p>
 							</div>
@@ -153,13 +153,13 @@ export default function Page() {
 						initial="hidden"
 						whileInView="show"
 						viewport={{ once: true, margin: "-80px" }}
-						className="mx-auto max-w-[720px]"
+						className="mx-auto max-w-[420px] sm:max-w-[460px]"
 					>
-						<div className="rounded-2xl border border-[#1D0B5B]/10 bg-white p-4 shadow-[0_20px_55px_-45px_rgba(29,11,91,0.28)]">
+						<div className="rounded-[26px] border border-[#1D0B5B]/12 bg-white p-3 shadow-[0_18px_50px_-42px_rgba(29,11,91,0.22)]">
 							<img
 								src="/screenshots/share-booklinq-modal.png"
 								alt="Booklinq share modal"
-								className="block w-full h-auto rounded-xl"
+								className="block w-full h-auto rounded-[18px]"
 								loading="lazy"
 							/>
 						</div>
