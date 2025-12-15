@@ -16,28 +16,34 @@ export default function Page() {
 	};
 
 	return (
-		<div className="min-h-screen bg-[#fbfcff] text-[#1D0B5B]">
-			<header className="sticky top-0 z-20 border-b border-[#1D0B5B]/10 bg-white/80 backdrop-blur">
-				<div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
+		<div className="relative min-h-screen bg-[#fbfcff] text-[#1D0B5B]">
+			{/* subtle depth (no imagery) */}
+			<div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+				<div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_0%,rgba(29,11,91,0.06),transparent_55%)]" />
+				<div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(2,166,165,0.06),transparent_55%)]" />
+			</div>
+
+			<header className="sticky top-0 z-20 border-b border-[#1D0B5B]/10 bg-white/85 backdrop-blur">
+				<div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
 					<a href="#top" className="inline-flex items-center gap-2">
-						<Logo size="sm" showWordmark />
+						<Logo size="md" showWordmark />
 					</a>
 				</div>
 			</header>
 
 			<main id="top">
 				{/* SECTION 1 — HERO */}
-				<section className="mx-auto max-w-5xl px-6 pt-20 sm:pt-28 pb-16">
+				<section className="mx-auto max-w-6xl px-6 pt-22 sm:pt-28 pb-18">
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 						<motion.div variants={fadeUp} initial="hidden" animate="show" className="lg:col-span-6">
-							<h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05] max-w-xl">
+							<h1 className="text-4xl sm:text-5xl md:text-[4rem] font-semibold tracking-[-0.02em] leading-[1.03] max-w-xl">
 								Your booking link.
 								<br />
 								Your guests.
 								<br />
 								Your terms.
 							</h1>
-							<p className="mt-6 max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed">
+							<p className="mt-7 max-w-2xl text-base sm:text-lg text-slate-700 leading-relaxed">
 								A direct booking page for independent hotels and short-stay hosts —
 								without commissions or lock‑in.
 							</p>
@@ -65,9 +71,9 @@ export default function Page() {
 							transition={{ delay: 0.05 }}
 							className="lg:col-span-6 lg:justify-self-end"
 						>
-							<figure className="-rotate-2">
-								<div className="rounded-[26px] border border-[#1D0B5B]/10 bg-white p-3 shadow-sm">
-									<div className="rounded-[20px] overflow-hidden bg-white">
+							<figure className="rotate-[-2deg] lg:rotate-[-1deg]">
+								<div className="mx-auto lg:mx-0 max-w-[420px] rounded-[28px] border border-[#1D0B5B]/12 bg-white p-3 shadow-[0_26px_70px_-45px_rgba(29,11,91,0.35)]">
+									<div className="rounded-[22px] overflow-hidden bg-white">
 										<img
 											src="/screenshots/booking-page-mobile.png"
 											alt="Booklinq booking page on mobile"
@@ -82,7 +88,7 @@ export default function Page() {
 				</section>
 
 				{/* SECTION 2 — REALITY CHECK */}
-				<section id="reality" className="mx-auto max-w-5xl px-6 py-16">
+				<section id="reality" className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<div className="max-w-2xl space-y-5 text-slate-700 leading-relaxed">
 							<p>Most guests already find you.</p>
@@ -99,7 +105,7 @@ export default function Page() {
 				</section>
 
 				{/* SECTION 3 — THE PRINCIPLE */}
-				<section className="mx-auto max-w-5xl px-6 py-16">
+				<section className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
 							Direct booking shouldn’t feel complicated.
@@ -114,7 +120,7 @@ export default function Page() {
 				</section>
 
 				{/* SECTION 4 — WHAT BOOKLINQ IS */}
-				<section id="how" className="mx-auto max-w-5xl px-6 py-16">
+				<section id="how" className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">How Booklinq fits in</h2>
 						<div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -141,15 +147,15 @@ export default function Page() {
 				</section>
 
 				{/* Mid-page visual (real product screenshot) */}
-				<div className="mx-auto max-w-5xl px-6 pb-16">
+				<div className="mx-auto max-w-6xl px-6 pb-20">
 					<motion.figure
 						variants={fadeUp}
 						initial="hidden"
 						whileInView="show"
 						viewport={{ once: true, margin: "-80px" }}
-						className="mx-auto max-w-2xl"
+						className="mx-auto max-w-[720px]"
 					>
-						<div className="rounded-2xl border border-[#1D0B5B]/10 bg-white p-4 shadow-sm">
+						<div className="rounded-2xl border border-[#1D0B5B]/10 bg-white p-4 shadow-[0_20px_55px_-45px_rgba(29,11,91,0.28)]">
 							<img
 								src="/screenshots/share-booklinq-modal.png"
 								alt="Booklinq share modal"
@@ -164,7 +170,7 @@ export default function Page() {
 				</div>
 
 				{/* SECTION 5 — CONTRAST */}
-				<section id="contrast" className="mx-auto max-w-5xl px-6 py-16">
+				<section id="contrast" className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
 							A simpler alternative to aggregators
@@ -193,7 +199,7 @@ export default function Page() {
 				</section>
 
 				{/* SECTION 6 — CONTROL & TRUST */}
-				<section className="mx-auto max-w-5xl px-6 py-16">
+				<section className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">You stay in control</h2>
 						<div className="mt-6 max-w-2xl space-y-3 text-slate-700 leading-relaxed">
@@ -206,7 +212,7 @@ export default function Page() {
 				</section>
 
 				{/* SECTION 7 — BUILT FOR REAL HOSTS */}
-				<section className="mx-auto max-w-5xl px-6 py-16">
+				<section className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Built for independent hosts</h2>
 						<div className="mt-6 max-w-2xl space-y-5 text-slate-700 leading-relaxed">
@@ -223,7 +229,7 @@ export default function Page() {
 				</section>
 
 				{/* SECTION 8 — NO LOCK-IN */}
-				<section className="mx-auto max-w-5xl px-6 py-16">
+				<section className="mx-auto max-w-6xl px-6 py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">No lock‑in</h2>
 						<div className="mt-6 max-w-2xl space-y-2 text-slate-700 leading-relaxed">
@@ -235,7 +241,7 @@ export default function Page() {
 				</section>
 
 				{/* SECTION 9 — FINAL CTA */}
-				<section id="final" className="mx-auto max-w-5xl px-6 pt-16 pb-24">
+				<section id="final" className="mx-auto max-w-6xl px-6 pt-18 pb-26">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
 							Set up once.
@@ -255,7 +261,7 @@ export default function Page() {
 			</main>
 
 			<footer className="border-t border-[#1D0B5B]/10 bg-white">
-				<div className="mx-auto max-w-5xl px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+				<div className="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
 					<div className="flex items-center gap-3">
 						<Logo size="sm" showWordmark />
 					</div>
