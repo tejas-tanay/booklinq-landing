@@ -1,4 +1,14 @@
-export default function Logo({ className = "", showWordmark = true, size = "md" }: { className?: string; showWordmark?: boolean; size?: "sm" | "md" | "lg" }) {
+export default function Logo({
+	className = "",
+	showWordmark = true,
+	size = "md",
+	invert = false,
+}: {
+	className?: string;
+	showWordmark?: boolean;
+	size?: "sm" | "md" | "lg";
+	invert?: boolean;
+}) {
 	const iconSizes = { sm: 24, md: 32, lg: 48 };
 	const iconSize = iconSizes[size];
 	
@@ -19,7 +29,9 @@ export default function Logo({ className = "", showWordmark = true, size = "md" 
 				/>
 			</svg>
 			{showWordmark && (
-				<span className="font-semibold tracking-tight text-white lowercase">booklinq</span>
+				<span className={`font-semibold tracking-tight lowercase ${invert ? "text-white" : "text-[#1D0B5B]"}`}>
+					booklinq
+				</span>
 			)}
 		</div>
 	);

@@ -58,7 +58,7 @@ export function DialogTitle({ children }: { children: React.ReactNode }) {
 }
 
 export function DialogDescription({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-	return <p className={["text-sm text-white/70", className].join(" ")}>{children}</p>;
+	return <p className={["text-sm text-[#1D0B5B]/70", className].join(" ")}>{children}</p>;
 }
 
 export function DialogFooter({ children }: { children: React.ReactNode }) {

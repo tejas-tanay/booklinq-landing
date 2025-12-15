@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export function Card({ className = "", ...props }: React.HTMLAttributes<HTMLDivElement>) {
-	return <div className={["rounded-2xl border bg-white/5 border-white/10", className].join(" ")} {...props} />;
+	return <div className={["rounded-2xl border bg-white border-[#1D0B5B]/10 shadow-sm", className].join(" ")} {...props} />;
 }
 
 export function CardHeader({ className = "", ...props }: React.HTMLAttributes<HTMLDivElement>) {
@@ -13,7 +13,7 @@ export function CardTitle({ className = "", ...props }: React.HTMLAttributes<HTM
 }
 
 export function CardDescription({ className = "", ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-	return <p className={["text-sm text-white/70", className].join(" ")} {...props} />;
+	return <p className={["text-sm text-[#1D0B5B]/60", className].join(" ")} {...props} />;
 }
 
 export function CardContent({ className = "", ...props }: React.HTMLAttributes<HTMLDivElement>) {

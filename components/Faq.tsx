@@ -52,27 +52,27 @@ export default function Faq() {
 		<section id="faq" className="mx-auto max-w-3xl px-6 py-16">
 			<div className="mb-6 text-center">
 				<h2 className="text-2xl md:text-3xl font-semibold">FAQ</h2>
-				<p className="mt-2 text-white/70">Quick answers to common questions.</p>
+				<p className="mt-2 text-[#1D0B5B]/70">Quick answers to common questions.</p>
 			</div>
-			<div className="divide-y divide-[#02A6A5]/20 rounded-xl border border-[#02A6A5]/30 bg-[#1D0B5B]/20 backdrop-blur">
+			<div className="divide-y divide-[#1D0B5B]/10 rounded-xl border border-[#1D0B5B]/10 bg-white/70 backdrop-blur">
 				{ITEMS.map((item, idx) => (
-					<details key={idx} className="group px-4 md:px-6 open:bg-[#1D0B5B]/30">
+					<details key={idx} className="group px-4 md:px-6 open:bg-[#02A6A5]/5">
 						<summary className="cursor-pointer list-none py-4 flex items-center justify-between">
 							<span className="text-sm md:text-base font-medium">{item.q}</span>
-							<span className="ml-3 rounded-md bg-[#1D0B5B] text-[#02A6A5] w-6 h-6 grid place-items-center border border-[#02A6A5]/30">
+							<span className="ml-3 rounded-md bg-white text-[#02A6A5] w-6 h-6 grid place-items-center border border-[#1D0B5B]/10">
 								<span className="transition group-open:hidden">+</span>
 								<span className="transition hidden group-open:inline">–</span>
 							</span>
 						</summary>
 						<div className="pb-4 -mt-1">
-							<p className="text-sm text-white/70 md:text-base">{item.a}</p>
+							<p className="text-sm text-[#1D0B5B]/70 md:text-base">{item.a}</p>
 						</div>
 					</details>
 				))}
 			</div>
 
 			{/* tiny CTA */}
-			<div className="mt-6 text-center text-sm text-white/80">
+			<div className="mt-6 text-center text-sm text-[#1D0B5B]/80">
 				Still have a question?{" "}
 				<a href="mailto:hello@mybooklinq.com" className="underline hover:text-[#02A6A5]">
 					Email us

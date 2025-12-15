@@ -198,28 +198,28 @@ export default function Page() {
 	};
 
 	return (
-		<div className="relative min-h-screen w-full overflow-x-hidden bg-[#1D0B5B] text-white antialiased">
+		<div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-[#fbfcff] via-[#f3f6ff] to-[#ecfbfb] text-[#1D0B5B] antialiased">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
 			/>
 			{/* subtle decorative glow */}
 			<div className="pointer-events-none absolute inset-0 -z-10">
-				<div className="absolute left-1/2 top-[-10%] h-[60vh] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(2,166,165,0.22),transparent_60%)] blur-2xl" />
-				<div className="absolute right-[-10%] bottom-[-10%] h-[50vh] w-[50vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(2,166,165,0.14),transparent_60%)] blur-2xl" />
+				<div className="absolute left-1/2 top-[-10%] h-[60vh] w-[60vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(2,166,165,0.18),transparent_60%)] blur-2xl" />
+				<div className="absolute right-[-10%] bottom-[-10%] h-[50vh] w-[50vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(29,11,91,0.10),transparent_60%)] blur-2xl" />
 			</div>
 
 			{/* Top nav */}
-			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-[#1D0B5B]/20 bg-[#1D0B5B]/10 border-b border-[#02A6A5]/20">
+			<header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/40 border-b border-[#1D0B5B]/10">
 				<div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
-					<a href="#hero" className="inline-flex items-center gap-2">
-						<Logo size="sm" showWordmark={true} />
-					</a>
+						<a href="#hero" className="inline-flex items-center gap-2">
+							<Logo size="sm" showWordmark={true} />
+						</a>
 					<nav className="hidden sm:flex items-center gap-2">
-						<a href="#why" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">Why</a>
-						<a href="#calculator" aria-label="See savings calculator" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">Calculator</a>
-						<a href="#roadmap" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">Roadmap</a>
-						<a href="#faq" className="rounded-md px-3 py-2 text-sm text-white/80 hover:text-[#02A6A5] transition">FAQ</a>
+						<a href="#why" className="rounded-md px-3 py-2 text-sm text-[#1D0B5B]/70 hover:text-[#02A6A5] transition">Why</a>
+						<a href="#calculator" aria-label="See savings calculator" className="rounded-md px-3 py-2 text-sm text-[#1D0B5B]/70 hover:text-[#02A6A5] transition">Calculator</a>
+						<a href="#roadmap" className="rounded-md px-3 py-2 text-sm text-[#1D0B5B]/70 hover:text-[#02A6A5] transition">Roadmap</a>
+						<a href="#faq" className="rounded-md px-3 py-2 text-sm text-[#1D0B5B]/70 hover:text-[#02A6A5] transition">FAQ</a>
 						<Button size="sm" className="ml-2 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:content-[''] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent hover:before:translate-x-full before:transition before:duration-700" onClick={() => setWaitlistOpen(true)} aria-expanded={waitlistOpen} data-cta="waitlist-nav">
 							Get Early Access
 						</Button>
@@ -231,8 +231,8 @@ export default function Page() {
 				{/* Hero */}
 				<section id="hero" className="relative">
 					<div className="mx-auto max-w-6xl px-6 pt-16 sm:pt-24 pb-16 sm:pb-28">
-						<div className="absolute right-6 top-6 sm:top-8 sm:right-8 opacity-80">
-							<span className="shimmer rounded-full bg-[#1D0B5B]/30 px-3 py-1 text-xs md:text-sm backdrop-blur border border-[#02A6A5]/30">
+						<div className="absolute right-6 top-6 sm:top-8 sm:right-8 opacity-90">
+							<span className="shimmer rounded-full bg-white/70 px-3 py-1 text-xs md:text-sm backdrop-blur border border-[#1D0B5B]/10 text-[#1D0B5B]/80">
 								Hospitality alpha ships November 2025 • Ticketing in December 2025
 							</span>
 						</div>
@@ -254,7 +254,7 @@ export default function Page() {
 								Your booking link, anywhere.
 							</motion.h1>
 							<motion.p
-								className="mt-4 max-w-xl text-white/80"
+								className="mt-4 max-w-xl text-[#1D0B5B]/75"
 								initial={{ opacity: 0, y: 8 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
@@ -265,7 +265,7 @@ export default function Page() {
 								<Button size="lg" onClick={() => setWaitlistOpen(true)} className="gap-2 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:content-[''] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent hover:before:translate-x-full before:transition before:duration-700" aria-expanded={waitlistOpen} data-cta="waitlist-hero">
 									Get early access <ArrowRight className="h-4 w-4" />
 								</Button>
-								<Button size="lg" variant="secondary" asChild className="bg-[#1D0B5B]/20 text-white hover:bg-[#1D0B5B]/30 border border-[#02A6A5]/30">
+								<Button size="lg" variant="secondary" asChild className="bg-white/70 text-[#1D0B5B] hover:bg-white border border-[#1D0B5B]/10">
 									<a href="#calculator" aria-label="See savings calculator" className="gap-2 inline-flex items-center" data-cta="see-calculator">
 										See savings calculator <Calculator className="h-4 w-4" />
 									</a>
@@ -306,7 +306,7 @@ export default function Page() {
 							viewport={{ once: true, margin: "-80px" }}
 							className="grid grid-cols-1 lg:grid-cols-2 gap-6"
 						>
-							<Card className="bg-[#1D0B5B]/20 border-[#02A6A5]/20">
+							<Card className="bg-white border-[#1D0B5B]/10">
 								<CardHeader>
 									<CardTitle className="flex items-center gap-2">
 										<Calculator className="h-5 w-5 text-[#02A6A5]" />
@@ -316,12 +316,12 @@ export default function Page() {
 								</CardHeader>
 								<CardContent className="space-y-6">
 									<div>
-										<label className="mb-2 block text-sm text-white/80">Your average monthly revenue</label>
+										<label className="mb-2 block text-sm text-[#1D0B5B]/80">Your average monthly revenue</label>
 										<div className="relative">
-											<span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/60">{currencySymbol}</span>
+											<span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#1D0B5B]/60">{currencySymbol}</span>
 											<Input
 												inputMode="numeric"
-												className="pl-7 bg-[#1D0B5B]/20 border-[#02A6A5]/30 text-white placeholder:text-white/40"
+												className="pl-7 bg-white border-[#1D0B5B]/10 text-[#1D0B5B] placeholder:text-[#1D0B5B]/40"
 												placeholder="e.g., 250,000"
 												value={revenueText}
 												onChange={(e) => {
@@ -332,7 +332,7 @@ export default function Page() {
 												onBlur={() => setRevenueText(integerFormatter.format(revenue))}
 											/>
 										</div>
-										<div className="mt-2 flex items-center gap-2 text-xs text-white/70">
+										<div className="mt-2 flex items-center gap-2 text-xs text-[#1D0B5B]/70">
 											<span>Currency:</span>
 											<button className="underline hover:text-[#02A6A5]" onClick={() => setCurrency("INR")} type="button">INR</button>
 											<span>·</span>
@@ -344,8 +344,8 @@ export default function Page() {
 
 									<div>
 										<div className="mb-2 flex items-center justify-between">
-											<label className="block text-sm text-white/80">Aggregator commission</label>
-											<span className="text-sm text-white/80">{commission}%</span>
+											<label className="block text-sm text-[#1D0B5B]/80">Aggregator commission</label>
+											<span className="text-sm text-[#1D0B5B]/80">{commission}%</span>
 										</div>
 										<Slider
 											className="cursor-pointer"
@@ -357,49 +357,49 @@ export default function Page() {
 											onValueChange={([v]) => setCommission(v)}
 											aria-describedby="commission-help"
 										/>
-										<div id="commission-help" className="mt-1 text-xs text-white/60">
+										<div id="commission-help" className="mt-1 text-xs text-[#1D0B5B]/60">
 											Typical range: 12–20%
 										</div>
 									</div>
 
-									<div className="rounded-xl border border-[#02A6A5]/30 bg-[#1D0B5B]/30 p-4">
+									<div className="rounded-xl border border-[#1D0B5B]/10 bg-white p-4">
 										<p className="mt-1 text-lg">
 											You’re losing <strong className="text-[#02A6A5]">{formattedLoss}/mo</strong> to commissions.
 										</p>
-										<p className="text-white/70">With Booklinq: <strong className="text-[#02A6A5]">{currencySymbol}0</strong> lost. Full control.</p>
+										<p className="text-[#1D0B5B]/70">With Booklinq: <strong className="text-[#02A6A5]">{currencySymbol}0</strong> lost. Full control.</p>
 									</div>
 
 									<Button size="lg" className="w-full gap-2 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:content-[''] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent hover:before:translate-x-full before:transition before:duration-700" onClick={() => setWaitlistOpen(true)} data-cta="calculator-waitlist">
 										Get my booking link early <ArrowRight className="h-4 w-4" />
 									</Button>
-									<div className="mt-4 rounded-xl border border-[#02A6A5]/20 bg-[#1D0B5B]/20 p-4">
+									<div className="mt-4 rounded-xl border border-[#1D0B5B]/10 bg-white p-4">
 										<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-											<div className="text-sm text-white/80">
+											<div className="text-sm text-[#1D0B5B]/80">
 												<div className="font-medium">Plan vs commission</div>
-												<div className="text-white/70">
+												<div className="text-[#1D0B5B]/70">
 													Monthly Booklinq plan: <span className="font-semibold">{planStr}</span>
 												</div>
 											</div>
-											<div className="text-sm text-white/80">
+											<div className="text-sm text-[#1D0B5B]/80">
 												Break even after <span className="font-semibold">{breakEvenStr}</span> in bookings.
 											</div>
 										</div>
-										<div className="mt-2 text-xs text-white/60">
+										<div className="mt-2 text-xs text-[#1D0B5B]/60">
 											At {commission}% commission, you’d pay the same on aggregator fees once monthly revenue hits {integerFormatter.format(breakEvenRevenue)}.
 										</div>
 									</div>
 								</CardContent>
 							</Card>
 
-							<Card className="bg-[#1D0B5B]/20 border-[#02A6A5]/20">
+							<Card className="bg-white border-[#1D0B5B]/10">
 								<CardHeader>
 									<CardTitle className="flex items-center gap-2">
 										<Logo size="sm" showWordmark={false} />
 										How Booklinq helps
 									</CardTitle>
-									<CardDescription>Convert more, pay less, and build your brand.</CardDescription>
+									<CardDescription className="text-[#1D0B5B]/60">Convert more, pay less, and build your brand.</CardDescription>
 								</CardHeader>
-								<CardContent className="space-y-4 text-white/80">
+								<CardContent className="space-y-4 text-[#1D0B5B]/80">
 									<p>
 										Embed your booking link anywhere: Instagram bio, WhatsApp replies, QR on your menu, or Google
 										Maps website field. It’s your direct line to revenue.
@@ -452,23 +452,23 @@ export default function Page() {
 			</main>
 
 			{/* Footer */}
-			<footer className="border-t border-[#02A6A5]/20">
+				<footer className="border-t border-[#1D0B5B]/10 bg-white/70">
 				<div className="mx-auto max-w-6xl px-6 py-10">
 					<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
 						<div className="flex items-center gap-3">
 							<Logo size="sm" showWordmark={true} />
 							<div>
-								<p className="text-xs text-white/70">© 2025 Booklinq. All rights reserved.</p>
+								<p className="text-xs text-[#1D0B5B]/70">© 2025 Booklinq. All rights reserved.</p>
 							</div>
 						</div>
-						<div className="text-sm text-white/50">
+						<div className="text-sm text-[#1D0B5B]/60">
 							Built by Innobles Technologies LLC — Dubai & India.
 						</div>
 						<div className="flex items-center gap-4 text-sm">
-							<a href="mailto:hello@mybooklinq.com" className="hover:text-[#02A6A5] transition">hello@mybooklinq.com</a>
-							<a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition">LinkedIn</a>
-							<a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition">Twitter</a>
-							<a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition">Instagram</a>
+							<a href="mailto:hello@mybooklinq.com" className="hover:text-[#02A6A5] transition text-[#1D0B5B]/80">hello@mybooklinq.com</a>
+							<a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition text-[#1D0B5B]/80">LinkedIn</a>
+							<a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition text-[#1D0B5B]/80">Twitter</a>
+							<a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#02A6A5] transition text-[#1D0B5B]/80">Instagram</a>
 						</div>
 					</div>
 				</div>
@@ -479,30 +479,30 @@ export default function Page() {
 				<DialogTrigger asChild>
 					<button className="hidden" aria-hidden />
 				</DialogTrigger>
-				<DialogContent className="bg-[#1D0B5B] border-[#02A6A5]/30 text-white">
+				<DialogContent className="bg-white border-[#1D0B5B]/10 text-[#1D0B5B]">
 					<DialogHeader>
 						<DialogTitle>Join the early access list</DialogTitle>
-						<DialogDescription className="text-white/70">
+						<DialogDescription className="text-[#1D0B5B]/70">
 							Be first in line for hospitality (Nov 2025) and ticketing (Dec 2025).
 						</DialogDescription>
 					</DialogHeader>
 					<div className="space-y-4">
 						<div>
-							<label className="mb-2 block text-sm text-white/80">Work email</label>
+							<label className="mb-2 block text-sm text-[#1D0B5B]/80">Work email</label>
 							<Input
 								type="email"
 								required
 								placeholder="yourname@hotel.com"
-								className="bg-[#1D0B5B]/20 border-[#02A6A5]/30 text-white placeholder:text-white/40"
+								className="bg-white border-[#1D0B5B]/10 text-[#1D0B5B] placeholder:text-[#1D0B5B]/40"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								data-cta="waitlist-email"
 							/>
 						</div>
 						<div>
-							<label className="mb-2 block text-sm text-white/80">Business type</label>
+							<label className="mb-2 block text-sm text-[#1D0B5B]/80">Business type</label>
 							<select
-								className="mt-1 w-full rounded-md bg-[#1D0B5B]/20 p-2 outline-none border border-[#02A6A5]/30 text-white"
+								className="mt-1 w-full rounded-md bg-white p-2 outline-none border border-[#1D0B5B]/10 text-[#1D0B5B]"
 								value={businessType}
 								onChange={(e) => setBusinessType(e.target.value)}
 							>
@@ -516,15 +516,15 @@ export default function Page() {
 							</select>
 						</div>
 						<div>
-							<label className="mb-2 block text-sm text-white/80">Country (optional)</label>
+							<label className="mb-2 block text-sm text-[#1D0B5B]/80">Country (optional)</label>
 							<Input
 								placeholder="UAE / India / …"
-								className="bg-[#1D0B5B]/20 border-[#02A6A5]/30 text-white placeholder:text-white/40"
+								className="bg-white border-[#1D0B5B]/10 text-[#1D0B5B] placeholder:text-[#1D0B5B]/40"
 								value={country}
 								onChange={(e) => setCountry(e.target.value)}
 							/>
 						</div>
-						<p className="mt-1 text-xs text-white/60">
+						<p className="mt-1 text-xs text-[#1D0B5B]/60">
 							By joining, you agree to receive limited product updates. No spam, ever.
 						</p>
 						{submitState === "success" && (
@@ -577,7 +577,7 @@ function FeatureCopy(props: { icon: React.ReactNode; title: string; body: string
 			viewport={{ once: true, margin: "-80px" }}
 			transition={{ duration: 0.4 }}
 		>
-			<Card className="h-full bg-[#1D0B5B]/20 border-[#02A6A5]/20">
+			<Card className="h-full bg-white border-[#1D0B5B]/10">
 				<CardHeader className="flex items-center gap-3 text-left">
 					<div className="h-9 w-9 rounded-lg bg-[#1D0B5B] grid place-items-center text-[#02A6A5]">
 						{props.icon}
@@ -585,7 +585,7 @@ function FeatureCopy(props: { icon: React.ReactNode; title: string; body: string
 					<h3 className="text-lg font-medium">{props.title}</h3>
 				</CardHeader>
 				<CardContent>
-					<p className="text-white/70">{props.body}</p>
+					<p className="text-[#1D0B5B]/70">{props.body}</p>
 				</CardContent>
 			</Card>
 		</motion.div>
@@ -612,14 +612,14 @@ function RoadmapCopy(props: {
 					<div className="p-6">
 						<div className="flex items-start justify-between">
 							<div className="flex items-start gap-3">
-								<div className="h-10 w-10 rounded-xl bg-white/10 grid place-items-center">{props.icon}</div>
+								<div className="h-10 w-10 rounded-xl bg-[#1D0B5B]/10 grid place-items-center text-[#02A6A5]">{props.icon}</div>
 								<div>
-									<p className="text-xs uppercase tracking-wide text-white/60">{props.eyebrow}</p>
+									<p className="text-xs uppercase tracking-wide text-[#1D0B5B]/60">{props.eyebrow}</p>
 									<h3 className="text-xl font-medium">{props.title}</h3>
-									<p className="mt-1 text-white/70">{props.body}</p>
+									<p className="mt-1 text-[#1D0B5B]/70">{props.body}</p>
 								</div>
 							</div>
-							<span className="rounded-full bg-white/10 px-3 py-1 text-xs leading-none border border-white/20 text-white/90 whitespace-nowrap">{props.chip}</span>
+							<span className="rounded-full bg-[#02A6A5]/10 px-3 py-1 text-xs leading-none border border-[#02A6A5]/25 text-[#1D0B5B]/80 whitespace-nowrap">{props.chip}</span>
 						</div>
 					</div>
 				</div>
@@ -635,7 +635,7 @@ function SocialLink(props: { href: string; label: string; children: React.ReactN
 			target="_blank"
 			rel="noreferrer"
 			aria-label={props.label}
-			className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition"
+			className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white hover:bg-[#02A6A5]/10 border border-[#1D0B5B]/10 transition text-[#1D0B5B]/80"
 		>
 			{props.children}
 		</a>

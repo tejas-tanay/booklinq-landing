@@ -27,7 +27,7 @@ export function Slider({
 	return (
 		<input
 			type="range"
-			className={["w-full h-2 rounded-lg bg-[#1D0B5B]/30 accent-[#02A6A5]", className].join(" ")}
+			className={["w-full h-2 rounded-lg bg-[#1D0B5B]/10 accent-[#02A6A5]", className].join(" ")}
 			min={min}
 			max={max}
 			step={step}
