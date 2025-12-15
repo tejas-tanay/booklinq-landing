@@ -5,6 +5,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OG() {
+  const headline = "Your booking link.\nYour guests.\nYour terms.";
   return new ImageResponse(
     (
       <div
@@ -41,12 +42,8 @@ export default function OG() {
           </span>
         </div>
         <div style={{ height: 40 }} />
-        <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.05 }}>
-          Your booking link.
-          <br />
-          Your guests.
-          <br />
-          Your terms.
+        <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.05, whiteSpace: "pre-wrap" }}>
+          {headline}
         </div>
         <div style={{ height: 16 }} />
         <div style={{ fontSize: 28, opacity: 0.8, maxWidth: 900 }}>
