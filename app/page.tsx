@@ -1,15 +1,24 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
 	Button,
 } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Slider } from "@/components/ui/slider";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Logo from "@/components/Logo";
 import {
 	ArrowRight,
 } from "lucide-react";
 
 export default function Page() {
+	const [monthlyRevenue, setMonthlyRevenue] = useState<number>(250000);
+	const [commissionPct, setCommissionPct] = useState<number>(15);
+
+	const monthlyLoss = Math.max(0, Math.round(monthlyRevenue * (commissionPct / 100)));
+
 	const fadeUp = {
 		hidden: { opacity: 0, y: 10 },
 		show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
@@ -87,6 +96,11 @@ export default function Page() {
 					</div>
 				</section>
 
+				{/* subtle divider */}
+				<div className="mx-auto max-w-6xl px-5 sm:px-6">
+					<div className="h-px bg-[#1D0B5B]/10" />
+				</div>
+
 				{/* SECTION 2 — REALITY CHECK */}
 				<section id="reality" className="mx-auto max-w-6xl px-5 sm:px-6 py-16 sm:py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
@@ -104,6 +118,10 @@ export default function Page() {
 					</motion.div>
 				</section>
 
+				<div className="mx-auto max-w-6xl px-5 sm:px-6">
+					<div className="h-px bg-[#1D0B5B]/10" />
+				</div>
+
 				{/* SECTION 3 — THE PRINCIPLE */}
 				<section className="mx-auto max-w-6xl px-5 sm:px-6 py-16 sm:py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
@@ -119,10 +137,22 @@ export default function Page() {
 					</motion.div>
 				</section>
 
+				<div className="mx-auto max-w-6xl px-5 sm:px-6">
+					<div className="h-px bg-[#1D0B5B]/10" />
+				</div>
+
 				{/* SECTION 4 — WHAT BOOKLINQ IS */}
 				<section id="how" className="mx-auto max-w-6xl px-5 sm:px-6 py-16 sm:py-20">
 					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
 						<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">How Booklinq fits in</h2>
+						{/* calm graphic representation (no UI, no callouts) */}
+						<div aria-hidden className="mt-6 hidden sm:flex items-center gap-4 max-w-xl">
+							<div className="h-2 w-2 rounded-full bg-[#1D0B5B]/60" />
+							<div className="h-px flex-1 bg-gradient-to-r from-[#1D0B5B]/20 via-[#02A6A5]/25 to-[#1D0B5B]/20" />
+							<div className="h-2 w-2 rounded-full bg-[#1D0B5B]/60" />
+							<div className="h-px flex-1 bg-gradient-to-r from-[#1D0B5B]/20 via-[#02A6A5]/25 to-[#1D0B5B]/20" />
+							<div className="h-2 w-2 rounded-full bg-[#1D0B5B]/60" />
+						</div>
 						<div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
 							<div className="max-w-sm">
 								<h3 className="text-[15px] font-medium text-[#1D0B5B]">Create</h3>
@@ -168,6 +198,57 @@ export default function Page() {
 						</figcaption>
 					</motion.figure>
 				</div>
+
+				{/* Savings calculator (reintroduced, calm + factual) */}
+				<section className="mx-auto max-w-6xl px-5 sm:px-6 py-16 sm:py-20">
+					<motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>
+						<div className="max-w-2xl">
+							<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Savings calculator</h2>
+						</div>
+						<div className="mt-10 max-w-2xl">
+							<Card>
+								<CardHeader>
+									<CardTitle className="text-base">Estimate your commission cost</CardTitle>
+								</CardHeader>
+								<CardContent className="space-y-6">
+									<div>
+										<label className="text-sm text-slate-700">Monthly revenue</label>
+										<Input
+											inputMode="numeric"
+											className="mt-2"
+											value={String(monthlyRevenue)}
+											onChange={(e) => {
+												const raw = e.target.value.replace(/[^\d]/g, "");
+												setMonthlyRevenue(raw ? Number(raw) : 0);
+											}}
+										/>
+									</div>
+									<div>
+										<div className="flex items-center justify-between">
+											<label className="text-sm text-slate-700">Commission</label>
+											<span className="text-sm text-slate-600">{commissionPct}%</span>
+										</div>
+										<div className="mt-3">
+											<Slider
+												min={5}
+												max={25}
+												step={1}
+												value={[commissionPct]}
+												onValueChange={([v]) => setCommissionPct(v)}
+											/>
+										</div>
+									</div>
+									<div className="rounded-xl border border-[#1D0B5B]/10 bg-[#fbfcff] p-4">
+										<p className="text-sm text-slate-600">Estimated monthly commission</p>
+										<p className="mt-1 text-2xl font-semibold tracking-tight text-[#1D0B5B]">
+											₹{monthlyLoss.toLocaleString("en-IN")}
+										</p>
+									</div>
+								</CardContent>
+							</Card>
+						</div>
+					</motion.div>
+				</section>
 
 				{/* SECTION 5 — CONTRAST */}
 				<section id="contrast" className="mx-auto max-w-6xl px-5 sm:px-6 py-16 sm:py-20">
